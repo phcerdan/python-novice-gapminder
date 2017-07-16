@@ -239,6 +239,7 @@ result of print is None
 > 1. Predict what each of the `print` statements in the program below will print.
 > 2. Does `max(len(rich), poor)` run or produce an error message?
 >    If it runs, does its result make any sense?
+> 3. As an extra, see the flexibility that optional arguments provide to built-in functions: predict the result of `max(rich, poor, key=len)`
 >
 > ~~~
 > easy_string = "abc"
@@ -249,6 +250,22 @@ result of print is None
 > print(max(len(rich), len(poor)))
 > ~~~
 > {: .python}
+> > ## Solution
+> >
+> > `max` works on a list of single values, but also on iterable types, like the `str` type. In this case python compares the characters that compose the `str` variable, ordering them in lexicographical order, and returning the largest.
+> >
+> > `max` can be used with an optional `key` argument, that accepts a function (such as `len`) which is applied to the variables before performing the comparison.
+> > ~~~
+> > bicharA = "ze"
+> > bicharB = "mx"
+> > print("Default:", max(bicharA, bicharB))
+> > def second_index(array):
+> >     return array[1];
+> > print("Compare second indices", max(bicharA, bicharB, second_index))
+> > ~~~
+> > {: .python}
+> > {: .output}
+> {: .solution}
 {: .challenge}
 
 > ## Why Not?
